@@ -56,7 +56,7 @@ function playRound(playerSelection, computerSelection) {
     let computerScore = 0;
     let winner = "";
 
-    for (let i = 0; i<5; i++){
+    /*for (let i = 0; i<5; i++){
         winner = playRound(prompt("Choose from Rock, Paper or Scissors:", "Rock"), getComputerChoice());
 
         if(winner.includes("Won")){
@@ -67,7 +67,7 @@ function playRound(playerSelection, computerSelection) {
         }
         console.log(winner);
         console.log(playerScore,computerScore);
-    }
+    }*/
 
     if(playerScore == computerScore){
         return "It's a tie"

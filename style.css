@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=VT323&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #333333;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    font-family: 'VT323', monospace;
+    font-size: 100px;
+    padding-top: 20px;
+    padding-bottom: 200px;
+}
+
+.players,
+.score {
+    font-family: 'VT323', monospace;
+    font-size: 50px;
+}
+.players {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+.score {
+    display: flex;
+}
+
+.footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.rock,
+.paper,
+.scissor {
+    font-size: 100px;
+}
