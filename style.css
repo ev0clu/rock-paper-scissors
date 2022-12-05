@@ -23,6 +23,7 @@ body {
 }
 
 .header {
+    color: #FFC925;
     font-size: 100px;
     display: flex;
     justify-content: center;
@@ -44,8 +45,8 @@ body {
     font-size: 50px;
 }
 
-.player-score,
-.computer-score {
+#player-score,
+#computer-score {
     font-size: 120px;
     color: rgb(151, 211, 224);
 }
@@ -55,7 +56,13 @@ body {
     justify-content: center;
     gap: 265px;
     padding-left: 20px;
-    padding-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.result {
+    font-size: 40px;
+    text-align: center;
     padding-bottom: 50px;
 }
 
@@ -63,6 +70,12 @@ body {
     display: flex;
     justify-content: center;
     gap: 50px;
+}
+
+button {
+    font-size: 120px;
+    border-radius: 24px;
+    border-color: white;
 }
 
 .footer {
@@ -75,10 +88,4 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.rock,
-.paper,
-.scissor {
-    font-size: 120px;
 }

@@ -20,13 +20,9 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+// Play a round
 function playRound(playerSelection, computerSelection) {
 
-    // if playerSelection has any capital letter, than convert it into lower case
-    if(playerSelection !== playerSelection.toLowerCase()){
-        playerSelection = playerSelection.toLowerCase();
-    }
-    
     // Rock beats scissors, scissors beat paper, and paper beats rock.
     if(playerSelection == computerSelection){
         return "It's a tie!";
@@ -51,33 +47,70 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-  function game(){
-    let playerScore = 0;
-    let computerScore = 0;
-    let winner = "";
+  let playerScore = 0;
+  let computerScore = 0;
 
-    /*for (let i = 0; i<5; i++){
-        winner = playRound(prompt("Choose from Rock, Paper or Scissors:", "Rock"), getComputerChoice());
-
+  function calcScore(winner){
+    if(!isGameOver()){
         if(winner.includes("Won")){
             playerScore = playerScore + 1;
         }
         else if(winner.includes("Lost")){
             computerScore = computerScore + 1;
         }
-        console.log(winner);
-        console.log(playerScore,computerScore);
-    }*/
+    }  
+  }
 
-    if(playerScore == computerScore){
-        return "It's a tie"
-    }
-    else if(playerScore > computerScore){
-        return "You Won!"
-    }
-    else{
-        return "You Lost!"
+  function getWinner() {
+    if(playerScore == 5 || computerScore == 5){
+        if(playerScore > computerScore){
+            return "Congratulation! You Won!";
+        }
+        else if(playerScore < computerScore){
+            return "Game Over! You Lost!";
+        }
+        else if(playerScore == computerScore){
+            return "It's a tie";
+        }
     }
   }
 
-console.log(game());
+  function isGameOver(){
+    if(playerScore >= 5 || computerScore >= 5){
+        return true;
+    }
+    else {
+        return false;
+    }
+  }
+    
+
+  function updateDOM(playerScore, computerScore, roundWinner, gameWinner){
+    const scoreP = document.querySelector("#player-score");
+    scoreP.textContent = playerScore.toString();
+    const scoreC = document.querySelector("#computer-score");
+    scoreC.textContent = computerScore.toString();
+
+    if(isGameOver()){
+        const theWinner = document.querySelector(".result");
+        theWinner.textContent = gameWinner;
+    }
+    else{
+        const theWinner = document.querySelector(".result");
+        theWinner.textContent = roundWinner;
+    }
+  }
+
+
+
+  const playerSelection = document.querySelectorAll("button");
+
+  playerSelection.forEach((button) => {
+
+    button.addEventListener('click', () => {
+        const roundWinner = playRound(button.id, getComputerChoice());
+        calcScore(roundWinner);
+        const gameWinner = getWinner();
+        updateDOM(playerScore, computerScore, roundWinner, gameWinner);
+    });
+  });

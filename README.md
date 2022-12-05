@@ -12,4 +12,4 @@ In this project, a simple rock paper scissors game has built.
 
 
 ### Layout
-![layout picture]()
+![layout picture](https://github.com/ev0clu/rock-paper-scissors/blob/main/layout.png?raw=true)
