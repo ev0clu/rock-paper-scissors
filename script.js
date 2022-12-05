@@ -1,3 +1,5 @@
+// ------- Game ------- //
+
 // Generate random number between 1...3 which belongs to the choice of computer from rock, paper or scissors
 function getComputerChoice() {
     let computerChoice = "";
@@ -45,12 +47,13 @@ function playRound(playerSelection, computerSelection) {
     else if((computerSelection == "paper") && (playerSelection == "rock")){
         return "You Lost! Paper beats Rock";
     }
-  }
+}
 
-  let playerScore = 0;
-  let computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 
-  function calcScore(winner){
+// ------- Calculate the score of player and computer ------- //
+function calcScore(winner){
     if(!isGameOver()){
         if(winner.includes("Won")){
             playerScore = playerScore + 1;
@@ -59,9 +62,10 @@ function playRound(playerSelection, computerSelection) {
             computerScore = computerScore + 1;
         }
     }  
-  }
+}
 
-  function getWinner() {
+// ------- Get the final winner of the game ------- //
+function getWinner() {
     if(playerScore == 5 || computerScore == 5){
         if(playerScore > computerScore){
             return "Congratulation! You Won!";
@@ -73,19 +77,22 @@ function playRound(playerSelection, computerSelection) {
             return "It's a tie";
         }
     }
-  }
+}
 
-  function isGameOver(){
+// ------- Check the player of computer is reached the 5 points in order to know the game is over or not ------- //
+function isGameOver(){
     if(playerScore >= 5 || computerScore >= 5){
         return true;
     }
     else {
         return false;
     }
-  }
+}
     
 
-  function updateDOM(playerScore, computerScore, roundWinner, gameWinner){
+// ------- UI ------- //
+// ------- Update the HTML with the game items ------- //
+function updateHTML(playerScore, computerScore, roundWinner, gameWinner){
     const scoreP = document.querySelector("#player-score");
     scoreP.textContent = playerScore.toString();
     const scoreC = document.querySelector("#computer-score");
@@ -99,18 +106,17 @@ function playRound(playerSelection, computerSelection) {
         const theWinner = document.querySelector(".result");
         theWinner.textContent = roundWinner;
     }
-  }
+}
 
 
+// ------- Steps of playing the game ------- //
+const playerSelection = document.querySelectorAll("button");
 
-  const playerSelection = document.querySelectorAll("button");
-
-  playerSelection.forEach((button) => {
-
+playerSelection.forEach((button) => {
     button.addEventListener('click', () => {
         const roundWinner = playRound(button.id, getComputerChoice());
         calcScore(roundWinner);
         const gameWinner = getWinner();
-        updateDOM(playerScore, computerScore, roundWinner, gameWinner);
+        updateHTML(playerScore, computerScore, roundWinner, gameWinner);
     });
-  });
+});
