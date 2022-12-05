@@ -8,7 +8,7 @@ In this project, a simple rock paper scissors game has built.
 
 ## Features
 - Player vs Computer
-- It can be played in browser console
+- Play until 5 points to get a winner
 
 
 ### Layout
