@@ -88,4 +88,20 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+}
+
+.reflink {
+    width: 25px;
+    text-align: center;
+}
+
+.github-img {
+    width: 20px;
+    height: 20px;
+}
+
+.github-img:hover {
+    width: 25px;
+    height: 25px;
 }
