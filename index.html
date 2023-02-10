@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors: The Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="header"> Rock, Paper, Scissors: The Game</div>
-    <div class="players-container">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Rock, Paper, Scissors: The Game</h1>
+    </div>
+    <div class="main">
+      <div class="players-container">
         <div class="player">Player</div>
         <div class="computer">Computer</div>
-    </div>
-    <div class="score-container">
+      </div>
+      <div class="score-container">
         <div id="player-score">0</div>
         <div class="vs">VS</div>
         <div id="computer-score">0</div>
-    </div>
-    <div class="result">Choose an item from below and reach 5 points to win the game!</div>
-    <div class="button-container">
+      </div>
+      <div class="result">Choose an item from below and reach 5 points to win the game!</div>
+      <div class="button-container">
         <button id="rock">✊</button>
         <button id="paper">✋</button>
         <button id="scissors">✌</button>
+      </div>
     </div>
     <footer class="footer">
-        <p>Copyright © Laszlo Kis
-            <script>document.write(new Date().getFullYear())</script>            
-        </p>
-        <a class="reflink" href="https://github.com/ev0clu" target="_blank">
-            <img class="github-img" src="github-logo.png" alt="Github logo">
-        </a>
+      <p>
+        Copyright © Laszlo Kis
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
+      <a class="reflink" href="https://github.com/ev0clu" target="_blank">
+        <img class="github-img" src="github-logo.png" alt="Github logo" />
+      </a>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
