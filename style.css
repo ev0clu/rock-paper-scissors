@@ -201,7 +201,8 @@ body {
 .result {
   font-size: 40px;
   text-align: center;
-  padding: 0 30px 50px 30px;
+  padding: 15px 30px 30px 15px;
+  height: 150px;
 }
 
 .button-container {
@@ -215,6 +216,46 @@ button {
   font-size: 120px;
   border-radius: 24px;
   border-color: white;
+}
+
+.btn-restart-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-restart {
+  border: none;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffc925;
+  background-color: rgb(11, 77, 92);
+  border-radius: 8px;
+  width: 10rem;
+  height: 2.5rem;
+}
+
+.btn-game:hover {
+  cursor: pointer;
+}
+
+#btn-restart:hover {
+  cursor: pointer;
+  background-color: rgb(17, 118, 141);
+}
+
+#btn-restart:active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.inactive {
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
 }
 
 .footer {
@@ -272,6 +313,7 @@ button {
     font-size: 20px;
     text-align: center;
     padding-bottom: 25px;
+    height: 60px;
   }
 
   .button-container {
